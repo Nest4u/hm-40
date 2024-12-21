@@ -12,7 +12,7 @@ We created a form that doesn’t use React state to control its inputs. Instead,
 
 ## 3. Server Request
 
-We built a component called **UserPosts**. It fetches a list of posts from an online API and displays them. The component also handles:
+We built a component called **GetData**. It fetches a list of posts from an online API and displays them. The component also handles:
 - Loading state (shows "Loading..." while waiting for the data).
 - Error state (shows an error message if the fetch fails).
 - Success state (displays the list of posts when the fetch is successful).
