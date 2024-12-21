@@ -1,50 +1,17 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+README
+React Training Project
+This project is for practicing key React concepts like working with forms and fetching data from a server. Here's what we did:
 
-Currently, two official plugins are available:
+1. Controlled Component
+We made a component called ControlledForm. It’s a form where all inputs (text, checkbox, dropdown) are controlled by React state. This helps to manage and validate the data in real-time.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. Uncontrolled Component
+We created a form that doesn’t use React state to control its inputs. Instead, it uses refs to get the values directly from the DOM. This is another way to handle forms but with less control over the input.
 
-## Expanding the ESLint configuration
+3. Server Request
+We built a component called UserPosts. It fetches a list of posts from an online API and displays them. The component also handles:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Loading state (shows "Loading..." while waiting for the data).
+Error state (shows an error message if the fetch fails).
+Success state (displays the list of posts when the fetch is successful).
